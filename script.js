@@ -10,7 +10,16 @@ if (menuToggle && navMenu) {
     navMenu.classList.toggle("active");
   });
 }
-
+document.addEventListener("click", function (e) {
+  if (
+    navMenu &&
+    menuToggle &&
+    !navMenu.contains(e.target) &&
+    !menuToggle.contains(e.target)
+  ) {
+    navMenu.classList.remove("active");
+  }
+});
 /* ==========================
    HEADER SCROLL EFFECT
 ========================== */
